@@ -1,0 +1,67 @@
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
+    @media only screen and (max-width: 1024px) {
+        max-width: 1024px;
+        padding: 0 15px;
+    }
+    @media only screen and (max-width: 320px) {
+        max-width: 320px;
+    }
+}
+@mixin nav {
+    font-size: $fz-13;
+    font-weight: $fw-bold;
+    color: $white-color;
+    @media only screen and (max-width: 320px) {
+        display: none;
+    }
+}
+@mixin btn 
+{
+    @include flex;
+    @media only screen and (max-width: 320px) {
+        padding-top: 51.29px;
+    }
+}
+@mixin btna{
+    @include flex;
+    width: 369px;
+    height: 77.58px;
+    background-color: $primary-color;
+    color: $white-color;
+    font-family: $font-family;
+    font-size: $fz-24;
+    font-weight: $fw-black;
+    &:hover {
+        background-color: $active-color;
+    }
+    &:active {
+        background-color: $primary-color;
+        box-shadow: 4px 4px 30px $primary-color;
+    }
+    @media only screen and (max-width: 320px) {
+        width: 279.24px;
+        height: 58.18px;
+    }
+}
+@mixin title {
+    font-size: $fz-64;
+    font-weight: $fw-black;
+    text-align: center;
+    color: $white-color;
+    @media only screen and (max-width: 320px) {
+        font-size: $fz-36;    
+    }
+}
+@mixin bullets {
+    width: 14px !important;
+    height: 14px !important;
+    background: $paginaition-color !important;
+    opacity: 1 !important;
+}

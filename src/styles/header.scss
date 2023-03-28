@@ -1,0 +1,41 @@
+@import '_cdn.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    border-bottom: 1px solid $header-border-color;
+    @include wrapper;
+}
+.header-logo img {
+    height: 96px;
+    @media only screen and (max-width: 320px) {
+        width: 130px;
+        height: 56.28px;
+    }
+}
+.header-burger__menu {
+    display: none;
+}
+.header-navigation {
+    display: flex;
+}
+.header-navigation__item {
+    padding: 0 33px;
+    height: 100px;
+    border-bottom: 3px solid transparent;
+    @include flex;
+    @include nav;
+    &:hover {
+        border-bottom: 3px solid $header-border-color;
+    }
+    &:active {
+        color: $active-color;
+        border-bottom: 3px solid $active-color;
+    }
+}

@@ -1,0 +1,42 @@
+@import '_cdn.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.swiper {
+    display: flex;
+    width: 100%;
+    height: 535px;
+}
+.swiper-slide {
+    margin-bottom: 100px;
+}
+.swiper-pagination-bullet  { 
+    @include bullets;
+    background: transparent !important;
+    border: 1px solid $paginaition-color !important;
+    margin-right: 15px !important;
+}
+.swiper-pagination-bullet-active  {
+    @include bullets;
+}
+.swiper-slide__item {
+    display: flex;
+}
+.swiper-slide__description {
+    padding: 116px 170px 144px 128px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 490px;
+    background-color: $slider-bg-color;
+}
+.swiper-slide__description-quote {
+    font-family: $font-family-slider;
+    font-size: 36px;
+    color: $white-color;
+    margin-bottom: 29px;
+}
+.swiper-slide__description-subtitle {
+    color: $white-color;
+    @include nav;
+}

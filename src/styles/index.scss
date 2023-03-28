@@ -1,5 +1,26 @@
+@import '_cdn.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import url(./header.scss);
+@import url(./banner.scss);
+@import url(./features.scss);
+@import url(./testimonials.scss);
+@import url(./work.scss);
+@import url(./download.scss);
+@import url(./ourteam.scss);
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: $font-family;
 }
+section {
+    margin-bottom: 144px;
+}
+.wrapper {
+    @include wrapper;
+}
+
