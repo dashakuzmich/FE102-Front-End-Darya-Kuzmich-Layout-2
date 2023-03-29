@@ -69,3 +69,7 @@
        height: 9px !important;    
     }
 }
+@mixin social {
+    font-size: $fz-18;
+    border: 1px solid #000;
+}
