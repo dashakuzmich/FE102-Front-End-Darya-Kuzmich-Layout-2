@@ -86,15 +86,7 @@
 }
 
 
-@media (max-width: 816px) {
-    .container {
-        width: 80%;
-    }
-
-    .header-iner {
-        width: 100%;
-        padding: 0;
-    }
+@media (max-width: 1024px) {
 
     .navigation {
         flex-direction: column;
@@ -112,7 +104,6 @@
     }
 
     .navigation-item {
-        margin: 0px 0px 50px;
         padding-bottom: 0px;
         border-bottom: 0px;
         min-width: auto;

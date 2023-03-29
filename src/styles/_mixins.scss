@@ -64,4 +64,8 @@
     height: 14px !important;
     background: $paginaition-color !important;
     opacity: 1 !important;
+    @media only screen and (max-width: 320px) {
+       width: 9px !important;
+       height: 9px !important;    
+    }
 }
