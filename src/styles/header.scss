@@ -11,31 +11,115 @@
     padding: 0;
     border-bottom: 1px solid $header-border-color;
     @include wrapper;
-}
-.header-logo img {
-    height: 96px;
-    @media only screen and (max-width: 320px) {
-        width: 130px;
-        height: 56.28px;
+
+    &-logo img {
+        height: 96px;
+        @media only screen and (max-width: 320px) {
+            width: 130px;
+            height: 56.28px;
+        }
     }
+    
 }
-.header-burger__menu {
-    display: none;
-}
-.header-navigation {
+.navigation {
     display: flex;
+    
+    &-item {
+        padding: 0 33px;
+        height: 100px;
+        border-bottom: 3px solid transparent;
+        @include flex;
+        @include nav;
+        &:hover {
+            border-bottom: 3px solid $header-border-color;
+        }
+        &:active {
+            color: $active-color;
+            border-bottom: 3px solid $active-color;
+        }
+    }
 }
-.header-navigation__item {
-    padding: 0 33px;
-    height: 100px;
-    border-bottom: 3px solid transparent;
-    @include flex;
-    @include nav;
-    &:hover {
-        border-bottom: 3px solid $header-border-color;
+.burger-btn {
+    display: none;
+    position: relative;
+    width: 55px;
+    height: 55px;
+    border: none;
+    background-color: transparent;
+    z-index: 2;
+}
+.burger-btn span {
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    left: 15px;
+    transition: 0.4s;
+}
+.burger-btn span:nth-child(1) {
+    transform: translateY(-6px);
+}
+.burger-btn span:nth-child(3) {
+    transform: translateY(6px);
+}
+.header.open .burger-btn span:nth-child(1) {
+    transform: translateY(0) rotate(-45deg);
+}
+
+.header.open .burger-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.header.open .burger-btn span:nth-child(3) {
+    transform: translateY(0) rotate(45deg);
+}
+
+
+.header.open .navigation {
+    transform: translateX(0%);
+    transition: 0.5s;
+}
+
+.header.open .burger-btn {
+    position: fixed;
+    right: 10%;
+}
+
+
+@media (max-width: 816px) {
+    .container {
+        width: 80%;
     }
-    &:active {
-        color: $active-color;
-        border-bottom: 3px solid $active-color;
+
+    .header-iner {
+        width: 100%;
+        padding: 0;
     }
+
+    .navigation {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: fixed;
+        top: 0px;
+        right: 0;
+        background-color: rgba(37, 43, 73, 0.8);
+        padding: 108px 0px 0px 20px;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-100%);
+        z-index: 1;
+    }
+
+    .navigation-item {
+        margin: 0px 0px 50px;
+        padding-bottom: 0px;
+        border-bottom: 0px;
+        min-width: auto;
+    }
+
+    .burger-btn {
+        display: block;
+    }
+
 }

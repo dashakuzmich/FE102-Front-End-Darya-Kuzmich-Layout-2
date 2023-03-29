@@ -1,3 +1,58 @@
 @import '_cdn.scss';
 @import '_mixins.scss';
 @import '_variables.scss';
+
+.features {
+    margin-top: -100px;
+    font-family: $font-family;
+}
+.features-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: repeat(1, 1fr);
+    grid-row-gap: 100px;
+    grid-column-gap: 31px;
+    @media only screen and (max-width: 320px) {
+        grid-template-columns: repeat(1, 100%);
+        grid-template-rows: repeat(6, 1fr);
+    }
+}
+.feature-card__img {
+    @include flex;
+    flex-direction: column;
+}
+
+.feature-card__img img {
+    @media only screen and (max-width: 1024px) {
+        width: 85px;
+    }
+    @media only screen and (max-width: 320px) {
+        width: 75px;
+    }
+}
+.feature-card__title {
+    margin-top: 51px;
+    font-size: $fz-24;
+    font-weight: $fw-black;
+    text-align: center;
+    @media only screen and (max-width: 1024px) {
+        margin-top: 44px;
+        font-size: $fz-18;
+    }
+    @media only screen and (max-width: 320px) {
+        margin-top: 36.88px;
+    }
+}
+.feature-card__description {
+    margin-top: 42px;
+    font-size: $fz-18;
+    font-weight: $fw-regular;
+    text-align: center;
+    @media only screen and (max-width: 1024px) {
+        margin-top: 23px;
+        font-size: $fz-14;
+    }
+    @media only screen and (max-width: 320px) {
+        margin-top: 8.67px;
+    }
+}
